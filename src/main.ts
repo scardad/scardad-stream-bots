@@ -1,13 +1,15 @@
-const express = require("express");
-const app = express();
-const botRouter = require("./routes/BotRoutes");
- 
-app.use("/api/bots", botRouter);
+import express from 'express'
+import botRouter from './routes/BotRoutes.js'
 
-app.use(express.json());
- 
+const app = express()
+
+app.use('/api/bots', botRouter)
+
+app.use(express.json())
+
 app.listen(3001, () => {
-  console.log("Server is running on port 3001");
-});
- 
-module.exports = app;
+  // eslint-disable-next-line
+  console.log('Server is running on port 3001')
+})
+
+export default app
